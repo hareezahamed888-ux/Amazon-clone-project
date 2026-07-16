@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product details | Amazon Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+            <div class="nav-search border">
+                <select class="search-select">
+                    <option>All</option>
+                    <option>Electronics</option>
+                    <option>Books</option>
+                </select>
+                <input placeholder="Search products" class="search-input">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="nav-signin border">
+                <p><span>hello, sign in</span></p>
+                <p class="nav-sec">Account & Lists</p>
+            </div>
+            <div class="nav-cart border">
+                <p><span><i class="fas fa-shopping-cart"></i> Cart</span></p>
+            </div>
+        </div>
+        <div class="panel detail-panel-row">
+            <div class="panel-all"><i class="fas fa-bars"></i> All</div>
+            <div class="panel-ops">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Prime</p>
+                <p>Gift Cards</p>
+                <p>Best Sellers</p>
+            </div>
+        </div>
+    </header>
+    <main class="detail-page">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> <span>&rsaquo;</span> <span id="breadcrumb-category">Product</span>
+        </nav>
+        <section class="detail-grid">
+            <div class="detail-image" id="detail-image"></div>
+            <div class="detail-info">
+                <p class="detail-category" id="detail-category"></p>
+                <h1 id="detail-title"></h1>
+                <div class="detail-meta">
+                    <span class="detail-price" id="detail-price"></span>
+                    <span class="detail-stock" id="detail-stock"></span>
+                </div>
+                <div class="detail-rating" id="detail-rating"></div>
+                <p class="detail-tagline" id="detail-tagline"></p>
+                <div class="detail-buttons">
+                    <button class="btn primary">Add to Cart</button>
+                    <button class="btn outline">Buy Now</button>
+                </div>
+                <div class="detail-highlights">
+                    <h2>Why customers love it</h2>
+                    <ul id="detail-highlights"></ul>
+                </div>
+            </div>
+            <aside class="detail-sidebar">
+                <div class="sidebar-card">
+                    <strong>Quality</strong>
+                    <p id="detail-quality"></p>
+                </div>
+                <div class="sidebar-card">
+                    <strong>Delivery</strong>
+                    <p>Free delivery in 3-5 business days</p>
+                </div>
+                <div class="sidebar-card">
+                    <strong>Return</strong>
+                    <p>30-day easy return and refund</p>
+                </div>
+                <div class="sidebar-card">
+                    <strong>Secure checkout</strong>
+                    <p>Trusted payment and protected purchase</p>
+                </div>
+            </aside>
+        </section>
+        <section class="detail-panel">
+            <h2>Product description</h2>
+            <p id="detail-desc"></p>
+            <h3>Product details</h3>
+            <ul id="detail-features"></ul>
+        </section>
+        <section class="related-products">
+            <h2>You may also like</h2>
+            <div class="related-grid" id="related-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="foot-panel1">Back To Top</div>
+        <div class="foot-panel2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Amazon Cares</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a>Sell on Amazon</a>
+                <a>Sell under Amazon Accelerator</a>
+                <a>Advertise Your Products</a>
+                <a>Fulfilment by Amazon</a>
+            </ul>
+            <ul>
+                <p>Connect with Us</p>
+                <a>Instagram</a>
+                <a>Twitter</a>
+                <a>Facebook</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a>Your Account</a>
+                <a>Returns Centre</a>
+                <a>Help</a>
+                <a>Amazon App Download</a>
+            </ul>
+        </div>
+        <div class="foot-panel3">
+            <div class="logo"></div>
+            <p>© 1996-2026, Amazon.com, Inc. or its affiliates</p>
+        </div>
+    </footer>
+    <script>
+        const products = [
+            {
+                id: '1',
+                name: 'Colorful Shirt',
+                category: 'Clothing',
+                price: '₹799',
+                rating: 4.5,
+                stock: 'In stock',
+                quality: 'Premium cotton knit with durable stitching',
+                tagline: 'Soft, stylish and ready for every day.',
+                image: 'box1_image.jpg',
+                desc: 'This colorful shirt is crafted for comfort and looks great for work or casual outings. It includes crisp finishing, bright color tones, and a modern fit.',
+                highlights: ['Breathable fabric', 'Durable stitching', 'Machine washable', 'Easy fit'],
+                features: ['Fabric: 100% cotton', 'Color: Bright multi-tone', 'Sizes available: S, M, L, XL', 'Style: Straight fit', 'Care: Cold wash']
+            },
+            {
+                id: '2',
+                name: 'Health & Personal Care Kit',
+                category: 'Health',
+                price: '₹1,199',
+                rating: 4.6,
+                stock: 'Only 12 left',
+                quality: 'Natural ingredients and dermatologist tested',
+                tagline: 'Complete care essentials for everyday wellness.',
+                image: 'box2_image.jpg',
+                desc: 'A full personal care kit with trusted essentials for hygiene and daily grooming. Includes high-quality ingredients formulated for sensitive skin.',
+                highlights: ['Organic ingredients', 'Skin-friendly', 'Compact travel size', 'Trusted brand'],
+                features: ['Set includes: Body wash, face cleanser, lotion, hand sanitizer', 'Suitable for all skin types', 'Dermatologically tested', 'Free from harsh chemicals']
+            },
+            {
+                id: '3',
+                name: 'White Table',
+                category: 'Furniture',
+                price: '₹3,499',
+                rating: 4.7,
+                stock: 'In stock',
+                quality: 'Engineered wood with scratch-resistant finish',
+                tagline: 'Stylish assembly-ready table for living and study spaces.',
+                image: 'box3_image.jpg',
+                desc: 'A sleek white table with clean lines and a sturdy frame. It is built for modern homes and offers excellent durability for daily use.',
+                highlights: ['Easy to assemble', 'Minimal maintenance', 'Stable design', 'Neutral color'],
+                features: ['Material: Engineered wood', 'Finish: Matte white', 'Dimensions: 120cm x 60cm x 75cm', 'Warranty: 1 year']
+            },
+            {
+                id: '4',
+                name: 'Smart Phone',
+                category: 'Electronics',
+                price: '₹22,999',
+                rating: 4.8,
+                stock: 'In stock',
+                quality: 'Latest processor with high-resolution camera',
+                tagline: 'Powerful performance and premium camera for daily use.',
+                image: 'box4_image.jpg',
+                desc: 'This smartphone delivers fast performance, bright display, and excellent battery life. Perfect for work, streaming, and photography on the go.',
+                highlights: ['Long battery life', 'Fast charging', 'High-quality camera', 'Large storage'],
+                features: ['Display: 6.5" OLED', 'Camera: 64MP rear', 'Storage: 128GB', 'RAM: 8GB', 'OS: Android 14']
+            },
+            {
+                id: '5',
+                name: 'Make-up Kit',
+                category: 'Beauty',
+                price: '₹1,499',
+                rating: 4.4,
+                stock: 'In stock',
+                quality: 'Skin-safe pigments with smooth application',
+                tagline: 'Complete beauty kit for everyday glam and special looks.',
+                image: 'box5_image.jpg',
+                desc: 'A full makeup kit with all essentials for a polished look. Includes long-lasting shades and tools for easy application.',
+                highlights: ['Travel-friendly', 'Blendable formulas', 'Color variety', 'Includes mirror'],
+                features: ['Set includes: eyeshadow, lipstick, blush, brushes', 'Suitable for all skin tones', 'Non-comedogenic', 'Cruelty-free']
+            },
+            {
+                id: '6',
+                name: 'Premium Pet Food',
+                category: 'Pet Care',
+                price: '₹899',
+                rating: 4.3,
+                stock: 'In stock',
+                quality: 'Balanced nutrition with natural ingredients',
+                tagline: 'Complete daily nutrition for healthy pets.',
+                image: 'box6_image.jpg',
+                desc: 'A premium pet food formula designed to support energy, coat health, and digestion for your furry friend.',
+                highlights: ['High protein content', 'Vitamin-rich', 'No artificial colors', 'Vet recommended'],
+                features: ['Weight: 2 kg', 'Suitable for dogs and cats', 'Supports healthy skin and coat', 'Made with real meat']
+            },
+            {
+                id: '7',
+                name: 'Kids Toy Set',
+                category: 'Toys',
+                price: '₹599',
+                rating: 4.5,
+                stock: 'Only 8 left',
+                quality: 'Non-toxic materials and bright colors',
+                tagline: 'Fun, safe playtime for kids and toddlers.',
+                image: 'box7_image.jpg',
+                desc: 'A toy set built for imagination and safe play. The pieces are designed for small hands and long-lasting fun.',
+                highlights: ['BPA-free', 'Soft edges', 'Educational fun', 'Easy to clean'],
+                features: ['Age range: 3+ years', 'Includes 12 pieces', 'Material: Durable plastic', 'Includes storage bag']
+            },
+            {
+                id: '8',
+                name: 'Fashion Jacket',
+                category: 'Apparel',
+                price: '₹2,999',
+                rating: 4.6,
+                stock: 'In stock',
+                quality: 'Water-resistant fabric with polished finish',
+                tagline: 'A stylish jacket built for comfort and everyday wear.',
+                image: 'box8_image.jpg',
+                desc: 'A fashion-forward jacket with a modern silhouette. It combines durability with comfort for chilly weather.',
+                highlights: ['Water-resistant', 'Warm insulation', 'Soft lining', 'Multiple pockets'],
+                features: ['Fabric: Polyester blend', 'Color: Charcoal grey', 'Sizes: S, M, L, XL', 'Closure: Zipper']
+            }
+        ];
+
+        function getProductId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        function renderProduct(product) {
+            document.getElementById('breadcrumb-category').textContent = product.category;
+            document.getElementById('detail-category').textContent = product.category;
+            document.getElementById('detail-title').textContent = product.name;
+            document.getElementById('detail-price').textContent = product.price;
+            document.getElementById('detail-stock').textContent = product.stock;
+            document.getElementById('detail-rating').innerHTML = `${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 ? '☆' : ''} <span>${product.rating.toFixed(1)} / 5</span>`;
+            document.getElementById('detail-tagline').textContent = product.tagline;
+            document.getElementById('detail-image').style.backgroundImage = `url('${product.image}')`;
+            document.getElementById('detail-quality').textContent = product.quality;
+            document.getElementById('detail-desc').textContent = product.desc;
+
+            const highlights = document.getElementById('detail-highlights');
+            highlights.innerHTML = '';
+            product.highlights.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                highlights.appendChild(li);
+            });
+
+            const features = document.getElementById('detail-features');
+            features.innerHTML = '';
+            product.features.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                features.appendChild(li);
+            });
+
+            renderRelated(product.id);
+        }
+
+        function renderRelated(currentId) {
+            const grid = document.getElementById('related-grid');
+            grid.innerHTML = '';
+            products.filter(product => product.id !== currentId).slice(0, 4).forEach(product => {
+                const card = document.createElement('article');
+                card.className = 'related-card';
+                card.innerHTML = `
+                    <a href="product.html?id=${product.id}">
+                        <div class="related-image" style="background-image: url('${product.image}')"></div>
+                        <div class="related-info">
+                            <h3>${product.name}</h3>
+                            <p class="related-price">${product.price}</p>
+                        </div>
+                    </a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        (function () {
+            const productId = getProductId();
+            const product = products.find(item => item.id === productId) || products[0];
+            renderProduct(product);
+        })();
+    </script>
+</body>
+</html>

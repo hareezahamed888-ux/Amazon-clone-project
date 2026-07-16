@@ -1,1 +1,2 @@
-# Amazon-clone-project
+# Amazon-clone
+amazon page 
